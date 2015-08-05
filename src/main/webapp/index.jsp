@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%
- String path = request.getContextPath();
- request.setAttribute("path",request.getContextPath());
- %>
+	String path = request.getContextPath();
+	request.setAttribute("path", request.getContextPath());
+%>
 <!DOCTYPE HTML>
 <html zh-CN>
 <head>
@@ -29,17 +29,19 @@
 <body>${path} aa
 </body>
 
-<script type="text/javascript">var path="${path}"</script>
+<script type="text/javascript">
+	var path = "${path}"
+</script>
 <!-- 浏览器下载js脚本文件时候，不会启动其他下载任务，放在底部有助于页面加载速度 -->
 <script type="text/javascript" src="${path}/static/js/require.js"></script>
-<script type="text/javascript" src="${path}/static/js/main.js" defer async="true" ></script>
+<!-- defre js的加载不会阻塞页面的渲染和资源的加载 -->
+<script type="text/javascript" src="${path}/static/js/main.js" defer async="true"></script>
 <script type="text/javascript">
-require(['jquery','test'],function($,tt){
-	$(function() {
-		//tt.functionTest();
-		functionTest();
-	})
-})
-	</script>
+	require([ 'jquery', 'test' ], function($, tt) {
+		$(function() {
+			functionTest();
+		})
+	});
+</script>
 
 </html>
