@@ -731,7 +731,7 @@
         
         function setupCanvases() {
             var reused,
-                existingCanvas = placeholder.children("http://www.zi-han.net/theme/hplus/js/plugins/flot/canvas.base"),
+                existingCanvas = placeholder.children("canvas.base"),
                 existingOverlay = placeholder.children("canvas.overlay");
 
             if (existingCanvas.length == 0 || existingOverlay == 0) {

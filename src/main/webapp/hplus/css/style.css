@@ -3656,6 +3656,7 @@ code {
 	white-space: nowrap;
 }
 
+/*底部有间隔，清除浮动*/
 .ibox {
 	clear: both;
 	margin-bottom: 25px;
@@ -6874,6 +6875,8 @@ opacity
 1;
 }
 }
+
+/*rtls模式的css*/
 body.rtls {
 	/* Theme config */
 	
@@ -7813,4 +7816,7 @@ body.skin-3 {
 /* ECHARTS  */
 .echarts {
 	height: 240px;
+}
+.fixed-nav .slimScrollDiv #side-menu {
+	padding-bottom: 60px;
 }

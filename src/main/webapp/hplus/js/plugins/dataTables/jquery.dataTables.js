@@ -2514,7 +2514,7 @@
 	
 		var jqFilter = $('input[type="search"]', filter)
 			.val( previousSearch.sSearch.replace('"','&quot;') )
-			.bind( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/keyup.DT search.DT input.DT paste.DT cut.DT', function(e) {
+			.bind( 'keyup.DT search.DT input.DT paste.DT cut.DT', function(e) {
 				/* Update all other filter input elements for the new display */
 				var n = features.f;
 				var val = !this.value ? "" : this.value; // mental IE8 fix :-(
@@ -2533,7 +2533,7 @@
 					_fnDraw( settings );
 				}
 			} )
-			.bind( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/keypress.DT', function(e) {
+			.bind( 'keypress.DT', function(e) {
 				/* Prevent form submission */
 				if ( e.keyCode == 13 ) {
 					return false;
@@ -2542,7 +2542,7 @@
 			.attr('aria-controls', tableId);
 	
 		// Update the input elements whenever the table is filtered
-		$(settings.nTable).on( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/filter.DT', function () {
+		$(settings.nTable).on( 'filter.DT', function () {
 			// IE9 throws an 'unknown error' if document.activeElement is used
 			// inside an iframe or frame...
 			try {
@@ -3077,7 +3077,7 @@
 	
 		select
 			.val( settings._iDisplayLength )
-			.bind( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/change.DT', function(e) {
+			.bind( 'change.DT', function(e) {
 				_fnLengthChange( settings, $(this).val() );
 				_fnDraw( settings );
 			} );
@@ -4755,15 +4755,15 @@
 	function _fnBindAction( n, oData, fn )
 	{
 		$(n)
-			.bind( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/click.DT', oData, function (e) {
+			.bind( 'click.DT', oData, function (e) {
 					n.blur(); // Remove focus outline for mouse users
 					fn(e);
 				} )
-			.bind( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/keypress.DT', oData, function (e){
+			.bind( 'keypress.DT', oData, function (e){
 				if ( e.which === 13 ) {
 					fn(e);
 				} } )
-			.bind( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/selectstart.DT', function () {
+			.bind( 'selectstart.DT', function () {
 				/* Take the brutal approach to cancelling text selection */
 				return false;
 				} );
@@ -9184,7 +9184,7 @@
 		 *   // Get JSON data from a file via Ajax.
 		 *   // Note DataTables expects data in the form `{ data: [ ...data... ] }` by default).
 		 *   $('#example').dataTable( {
-		 *     "ajax": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/data.json"
+		 *     "ajax": "data.json"
 		 *   } );
 		 *
 		 * @example
@@ -9192,7 +9192,7 @@
 		 *   // `data` to `tableData` (i.e. `{ tableData: [ ...data... ] }`)
 		 *   $('#example').dataTable( {
 		 *     "ajax": {
-		 *       "url": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/data.json",
+		 *       "url": "data.json",
 		 *       "dataSrc": "tableData"
 		 *     }
 		 *   } );
@@ -9202,7 +9202,7 @@
 		 *   // from a plain array rather than an array in an object
 		 *   $('#example').dataTable( {
 		 *     "ajax": {
-		 *       "url": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/data.json",
+		 *       "url": "data.json",
 		 *       "dataSrc": ""
 		 *     }
 		 *   } );
@@ -9213,11 +9213,11 @@
 		 *   // is just a simple example of how the data can be manipulated).
 		 *   $('#example').dataTable( {
 		 *     "ajax": {
-		 *       "url": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/data.json",
+		 *       "url": "data.json",
 		 *       "dataSrc": function ( json ) {
 		 *         for ( var i=0, ien=json.length ; i<ien ; i++ ) {
 		 *           json[i][0] = '<a href="http://www.zi-han.net/message/'+json[i][0]+'>View message</a>'; *         } *         return json; *       } *     } *   } ); * * @example *   // Add data to the request *   $('#example').dataTable( { *"ajax": {
-		 *       "url": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/data.json",
+		 *       "url": "data.json",
 		 *       "data": function ( d ) {
 		 *         return {
 		 *           "extra_search": $('#extra').val()
@@ -9230,7 +9230,7 @@
 		 *   // Send request as POST
 		 *   $('#example').dataTable( {
 		 *     "ajax": {
-		 *       "url": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/data.json",
+		 *       "url": "data.json",
 		 *       "type": "POST"
 		 *     }
 		 *   } );
@@ -9394,7 +9394,7 @@
 		 *  @example
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
-		 *        "ajax": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/sources/arrays.txt",
+		 *        "ajax": "sources/arrays.txt",
 		 *        "deferRender": true
 		 *      } );
 		 *    } );
@@ -9629,7 +9629,7 @@
 		 *    $(document).ready( function () {
 		 *      $('#example').dataTable( {
 		 *        "serverSide": true,
-		 *        "ajax": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/xhr.php"
+		 *        "ajax": "xhr.php"
 		 *      } );
 		 *    } );
 		 */
@@ -10261,7 +10261,7 @@
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
 		 *        "serverSide": true,
-		 *        "ajax": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/scripts/server_processing.php",
+		 *        "ajax": "scripts/server_processing.php",
 		 *        "deferLoading": 57
 		 *      } );
 		 *    } );
@@ -10271,7 +10271,7 @@
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
 		 *        "serverSide": true,
-		 *        "ajax": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/scripts/server_processing.php",
+		 *        "ajax": "scripts/server_processing.php",
 		 *        "deferLoading": [ 57, 100 ],
 		 *        "search": {
 		 *          "search": "my_filter"
@@ -11401,7 +11401,7 @@
 		 *    //   }
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
-		 *        "ajaxSource": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/sources/objects.txt",
+		 *        "ajaxSource": "sources/objects.txt",
 		 *        "columns": [
 		 *          { "data": "engine" },
 		 *          { "data": "browser" },
@@ -11427,7 +11427,7 @@
 		 *    //   }
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
-		 *        "ajaxSource": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/sources/deep.txt",
+		 *        "ajaxSource": "sources/deep.txt",
 		 *        "columns": [
 		 *          { "data": "engine" },
 		 *          { "data": "browser" },
@@ -11553,13 +11553,13 @@
 		 *    // Create a comma separated list from an array of objects
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
-		 *        "ajaxSource": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/sources/deep.txt",
+		 *        "ajaxSource": "sources/deep.txt",
 		 *        "columns": [
 		 *          { "data": "engine" },
 		 *          { "data": "browser" },
 		 *          {
 		 *            "data": "platform",
-		 *            "render": "http://www.zi-han.net/theme/hplus/js/plugins/dataTables/[, ].name"
+		 *            "render": "[, ].name"
 		 *          }
 		 *        ]
 		 *      } );
@@ -13741,7 +13741,7 @@
 				// No additional mark-up required
 	
 				// Attach a sort listener to update on sort
-				$(settings.nTable).on( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/order.dt', function ( e, settings, sorting, columns ) {
+				$(settings.nTable).on( 'order.dt', function ( e, settings, sorting, columns ) {
 					cell
 						.removeClass(
 							column.sSortingClass +' '+
@@ -13766,7 +13766,7 @@
 					.appendTo( cell );
 	
 				// Attach a sort listener to update on sort
-				$(settings.nTable).on( 'http://www.zi-han.net/theme/hplus/js/plugins/dataTables/order.dt', function ( e, settings, sorting, columns ) {
+				$(settings.nTable).on( 'order.dt', function ( e, settings, sorting, columns ) {
 					cell
 						.removeClass( classes.sSortAsc +" "+classes.sSortDesc )
 						.addClass( columns[ idx ] == 'asc' ?
@@ -13925,13 +13925,13 @@
 	 *
 	 *  @example
 	 *     // Use a custom property returned from the server in another DOM element
-	 *     $('#table').dataTable().on('http://www.zi-han.net/theme/hplus/js/plugins/dataTables/xhr.dt', function (e, settings, json) {
+	 *     $('#table').dataTable().on('xhr.dt', function (e, settings, json) {
 	 *       $('#status').html( json.status );
 	 *     } );
 	 *
 	 *  @example
 	 *     // Pre-process the data returned from the server
-	 *     $('#table').dataTable().on('http://www.zi-han.net/theme/hplus/js/plugins/dataTables/xhr.dt', function (e, settings, json) {
+	 *     $('#table').dataTable().on('xhr.dt', function (e, settings, json) {
 	 *       for ( var i=0, ien=json.aaData.length ; i<ien ; i++ ) {
 	 *         json.aaData[i].sum = json.aaData[i].one + json.aaData[i].two;
 	 *       }

@@ -150,7 +150,7 @@
                 decimalSeparator: ".",
                 thousandsSeparator: ",",
                 decimalPlaces: 2,
-                defaultValue: 'http://www.zi-han.net/theme/hplus/js/plugins/jqgrid/i18n/0.00'
+                defaultValue: '0.00'
             },
             currency: {
                 decimalSeparator: ".",
@@ -158,7 +158,7 @@
                 decimalPlaces: 2,
                 prefix: "",
                 suffix: "",
-                defaultValue: 'http://www.zi-han.net/theme/hplus/js/plugins/jqgrid/i18n/0.00'
+                defaultValue: '0.00'
             },
             date: {
                 dayNames: [

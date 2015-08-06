@@ -26,7 +26,35 @@
 	href="${path}/static/css/bootstrap-3.3.5.min.css" />
 </head>
 
-<body>${path} aa
+<body>
+	${path} aa
+
+	<p>p标签</p><p>p标签</p>
+	<h1>h1</h1><h1>h1</h1>
+	<ol>
+		<li>ol</li>
+		<li>ol</li>
+	</ol>
+	<ol>
+		<li>ol</li>
+		<li>ol</li>
+	</ol>
+	<ul>
+		<li>ul</li>
+		<li>ul</li>
+	</ul>
+	<ul>
+		<li>ul</li>
+		<li>ul</li>
+	</ul>
+	
+	
+	<a href="#">a标签</a><a href="#">a标签</a>
+	<img>图片img <img>图片img
+<input type="text">输入框input <input type="text">输入框input
+<label>label</label> <label>label</label>
+<strong>strong</strong><strong>strong</strong>
+<small>small </small><small>small </small>
 </body>
 
 <script type="text/javascript">
@@ -35,7 +63,8 @@
 <!-- 浏览器下载js脚本文件时候，不会启动其他下载任务，放在底部有助于页面加载速度 -->
 <script type="text/javascript" src="${path}/static/js/require.js"></script>
 <!-- defre js的加载不会阻塞页面的渲染和资源的加载 -->
-<script type="text/javascript" src="${path}/static/js/main.js" defer async="true"></script>
+<script type="text/javascript" src="${path}/static/js/main.js" defer
+	async="true"></script>
 <script type="text/javascript">
 	require([ 'jquery', 'test' ], function($, tt) {
 		$(function() {

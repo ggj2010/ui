@@ -144,10 +144,10 @@ if ($.fn.dataTable.Api) {
                     '</ul>'
                 );
                 var els = $('a', nPaging);
-                $(els[0]).bind('http://www.zi-han.net/theme/hplus/js/plugins/dataTables/click.DT', {
+                $(els[0]).bind('click.DT', {
                     action: "previous"
                 }, fnClickHandler);
-                $(els[1]).bind('http://www.zi-han.net/theme/hplus/js/plugins/dataTables/click.DT', {
+                $(els[1]).bind('click.DT', {
                     action: "next"
                 }, fnClickHandler);
             },

@@ -90,7 +90,7 @@ $(function () {
         {
             text: '父节点 4',
             icon: 'glyphicon glyphicon-cloud-download',
-            href: 'http://www.zi-han.net/demo.html',
+            href: 'demo.html',
             tags: ['19'],
             selected: true
           },
