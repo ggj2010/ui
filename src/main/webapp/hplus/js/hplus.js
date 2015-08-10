@@ -161,7 +161,7 @@ function navbarConfig() {
     // RTL模式
     $('#RTLmode').click(function() {
         if ($('#RTLmode').is(':checked')) {
-            $('head').append('<link href="css/bootstrap-rtl.css" id="rtl-mode" rel="stylesheet">');
+            $('head').append('<link href="hplus/css/bootstrap-rtl.css" id="rtl-mode" rel="stylesheet">');
             $('body').addClass('rtls');
         } else {
             $('#rtl-mode').remove();

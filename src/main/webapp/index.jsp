@@ -26,9 +26,25 @@ request.setAttribute("path", request.getContextPath());
         href="${path}/static/css/bootstrap-3.3.5.min.css" />
         <!-- 动画库 animated bounceOutUp shake -->
         <link  href="${path}/hplus/css/animate.css" rel="stylesheet">
+
+        <style>
+            .footer {
+                background: none repeat scroll 0 0 white;
+                border-top: 1px solid #e7eaec;
+                bottom: 0;
+                left: 0;
+                padding: 10px 20px;
+                position: absolute;
+                right: 0;
+            }
+        </style>
     </head>
 
     <body>
+
+        <div class="footer">
+            bottom:距离浏览器底部;
+        </div>
         <div class="animated bounceInUp">
             ${path} aa
             <p>
@@ -39,7 +55,6 @@ request.setAttribute("path", request.getContextPath());
             </p>
             <h1>h1</h1>
             <h1>h1</h1>
-            <
             <ol>
                 <li>
                     ol
@@ -85,10 +100,13 @@ request.setAttribute("path", request.getContextPath());
             <strong>strong</strong>
             <small>small </small>
             <small>small </small>
+        </div>
 
     </body>
 
-    <script type="text/javascript">var path = "${path}"</script>
+    <script type="text/javascript">
+        var path = "${path}"
+    </script>
     <!-- 浏览器下载js脚本文件时候，不会启动其他下载任务，放在底部有助于页面加载速度 -->
     <script type="text/javascript" src="${path}/static/js/require.js"></script>
     <!-- defre js的加载不会阻塞页面的渲染和资源的加载 -->

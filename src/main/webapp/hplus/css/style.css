@@ -1,4 +1,4 @@
-@import url("css-family=Open+Sans-300,400,600,700&lang=en.css")/**图标css/
+@import url("css-family=Open+Sans-300,400,600,700&lang=en.css")
 	/*tpa=http://fonts.useso.com/css?family=Open+Sans:300,400,600,700&lang=en*/
 	;
 /*
@@ -8,12 +8,12 @@
  *
 */
 
-/**
+/*
 学习css记录
 系统提供了多个皮肤skin-1,skin-2,skin-3
 
 
-**/
+*/
 
 h1,h2,h3,h4,h5,h6 {
 	font-weight: 100;
@@ -2987,6 +2987,7 @@ a.forum-item-title:hover {
 		top: 2px;
 		font-size: 14px;
 	}
+/**nth-child(even)为偶数,Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1**/
 	.center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content
 		{
 		float: right;
@@ -3350,11 +3351,11 @@ video {
 	overflow-x: hidden;
 }
 
-/**左右边距**/
+/*左右边距*/
 .wrapper {
 	padding: 0 20px;
 }
-/**上下边距边距**/
+/*上下边距边距*/
 .wrapper-content {
 	padding: 20px 10px 40px;
 }
