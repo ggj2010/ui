@@ -12,8 +12,9 @@
 
     <link  href="hplus/css/bootstrap.min.css" rel="stylesheet">
    <link  href="hplus/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="custom.css" href="http://www.zi-han.net/theme/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="jquery.steps.css" href="http://www.zi-han.net/theme/hplus/css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <link href="hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <!--steps插件  -->
+    <link href="hplus/css/plugins/steps/jquery.steps.css" rel="stylesheet">
     <link  href="hplus/css/animate.css" rel="stylesheet">
    <link  href="hplus/css/style.css" rel="stylesheet">
 
@@ -27,7 +28,7 @@
                     <li class="nav-header">
 
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="profile_small.jpg" href="http://www.zi-han.net/theme/hplus/img/profile_small.jpg" />
+                            <img alt="image" class="img-circle" src="hplus/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#" href="http://www.zi-han.net/theme/hplus/index.html#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Beaut-zihan</strong>
@@ -440,7 +441,7 @@
                             </div>
                             <div class="ibox-content">
                                 <p>
-                                    这是一个简单的步骤条示例
+                                   	 这是一个简单的步骤条示例
                                 </p>
                                 <div id="wizard">
                                     <h1>第一步</h1>
@@ -448,7 +449,7 @@
                                         <div class="text-center m-t-md">
                                             <h2>第一步</h2>
                                             <p>
-                                                这是第一步的内容
+                                               	 这是第一步的内容
                                             </p>
                                         </div>
                                     </div>
@@ -458,7 +459,7 @@
                                         <div class="text-center m-t-md">
                                             <h2>第二步</h2>
                                             <p>
-                                                这是第二步的内容
+                                                	这是第二步的内容
                                             </p>
                                         </div>
                                     </div>
@@ -468,7 +469,7 @@
                                         <div class="text-center m-t-md">
                                             <h2>第三步</h2>
                                             <p>
-                                                这是第三步的内容
+                                                	这是第三步的内容
                                             </p>
                                         </div>
                                     </div>
@@ -607,15 +608,16 @@
      <script src="hplus/js/plugins/pace/pace.min.js"></script>
 
     <!-- Steps -->
-    <script src="jquery.steps.min.js" href="http://www.zi-han.net/theme/hplus/js/plugins/staps/jquery.steps.min.js"></script>
+    <script src="hplus/js/plugins/staps/jquery.steps.min.js"></script>
 
     <!-- Jquery Validate -->
-    <script src="jquery.validate.min.js" href="http://www.zi-han.net/theme/hplus/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="messages_zh.min.js" href="http://www.zi-han.net/theme/hplus/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="hplus/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="hplus/js/plugins/validate/messages_zh.min.js"></script>
 
 
     <script>
         $(document).ready(function () {
+        	//步骤
             $("#wizard").steps();
             $("#form").steps({
                 bodyTag: "fieldset",
@@ -677,9 +679,21 @@
                     element.before(error);
                 },
                 rules: {
+                	   password: {
+                           required: true,
+                           minlength: 5
+                       },
                     confirm: {
-                        equalTo: "#password"
+                        equalTo: "password"
                     }
+                }
+                ,
+                /*messages重写默认的提示*/
+                messages: {
+                	 password: {
+                         required: "请输入您的密码",
+                         minlength: "密码必须5个字符以上"
+                     }
                 }
             });
         });

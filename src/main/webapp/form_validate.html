@@ -25,7 +25,7 @@
                     <li class="nav-header">
 
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="profile_small.jpg" href="http://www.zi-han.net/theme/hplus/img/profile_small.jpg" />
+                            <img alt="image" class="img-circle" src="hplus/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#" href="http://www.zi-han.net/theme/hplus/index.html#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Beaut-zihan</strong>
@@ -621,9 +621,9 @@
    <script src="hplus/js/hplus.js"></script>
      <script src="hplus/js/plugins/pace/pace.min.js"></script>
 
-    <!-- jQuery Validation plugin javascript-->
-    <script src="jquery.validate.min.js" href="http://www.zi-han.net/theme/hplus/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="messages_zh.min.js" href="http://www.zi-han.net/theme/hplus/js/plugins/validate/messages_zh.min.js"></script>
+    <!-- jQuery Validation plugin javascript 提示非常好看！-->
+    <script src="hplus/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="hplus/js/plugins/validate/messages_zh.min.js"></script>
     <script>
         //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
         $.validator.setDefaults({
@@ -636,8 +636,6 @@
             errorElement: "span",
             errorClass: "help-block m-b-none",
             validClass: "help-block m-b-none"
-
-
         });
 
          //以下为官方示例
@@ -694,7 +692,7 @@
                 }
             });
 
-            // propose username by combining first- and lastname
+            // propose username by combining first- and lastname相加
             $("#username").focus(function () {
                 var firstname = $("#firstname").val();
                 var lastname = $("#lastname").val();
@@ -704,8 +702,6 @@
             });
         });
     </script>
-
-  
 
 </body>
 

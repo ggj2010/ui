@@ -13,8 +13,8 @@
     <link  href="hplus/css/bootstrap.min.css" rel="stylesheet">
    <link  href="hplus/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link  href="hplus/css/animate.css" rel="stylesheet">
-    <link href="basic.css" href="http://www.zi-han.net/theme/hplus/css/plugins/dropzone/basic.css" rel="stylesheet">
-    <link href="dropzone.css" href="http://www.zi-han.net/theme/hplus/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="hplus/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="hplus/css/plugins/dropzone/dropzone.css" rel="stylesheet">
    <link  href="hplus/css/style.css" rel="stylesheet">
 
 </head>
@@ -27,7 +27,7 @@
                     <li class="nav-header">
 
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="profile_small.jpg" href="http://www.zi-han.net/theme/hplus/img/profile_small.jpg" />
+                            <img alt="image" class="img-circle" src="hplus/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#" href="http://www.zi-han.net/theme/hplus/index.html#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Beaut-zihan</strong>
@@ -471,19 +471,24 @@
    <script src="hplus/js/hplus.js"></script>
      <script src="hplus/js/plugins/pace/pace.min.js"></script>
 
-    <!-- DROPZONE -->
-    <script src="dropzone.js" href="http://www.zi-han.net/theme/hplus/js/plugins/dropzone/dropzone.js"></script>
+    <!-- DROPZONE  文件上传 开源的 JavaScript 库，提供 AJAX 异步上传功能-->
+    <script src="hplus/js/plugins/dropzone/dropzone.js"></script>
 
 
     <script>
         $(document).ready(function () {
 
             Dropzone.options.myAwesomeDropzone = {
-
+            		//上传地址
+				url:www.baidu.com,
                 autoProcessQueue: false,
                 uploadMultiple: true,
                 parallelUploads: 100,
                 maxFiles: 100,
+                //文件类型
+              //  acceptedFiles: ".js,.txt"
+                	//文件大小
+                maxFilesize: 100,
 
                 // Dropzone settings
                 init: function () {

@@ -3259,6 +3259,7 @@ a:hover,a:focus {
 	text-transform: uppercase;
 }
 
+/*左边div有一个竖线*/
 .b-r {
 	border-right: 1px solid #e7eaec;
 }

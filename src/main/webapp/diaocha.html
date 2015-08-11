@@ -1,0 +1,240 @@
+<!-- html5的文档声明 -->
+<!DOCTYPE HTML>
+<html zh-CN>
+<!--  lang对搜索引擎和浏览器是有帮助的<html lang="zh-CN"> -->
+<head>
+<!-- 必须申明文档的编码charset，且与文件本身编码保持一致，推荐使用UTF-8编码 -->
+<meta charset="utf-8">
+<title>问卷调查</title>
+<meta name="keywords" content="调查">
+<meta name="description" content="谢谢大家填写！">
+
+<!-- Bootstrap 是移动设备优先的 ,确保适当的绘制和触屏缩放。user-scalable=no是禁止屏幕缩放的 -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=no">
+
+
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<!--Bookmark是用来显示收藏夹本网页的图标的  -->
+<link rel="Bookmark" href="static/image/favicon.ico">
+<!--Bookmark是用来显示浏览器导航栏本网页的图标的  -->
+<link rel="Shortcut Icon" href="static/image/favicon.ico" />
+
+<!-- 把CSS放在头部，可以让页面根据CSS样式逐步渲染-->
+<link type="text/css"
+	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="navbar navbar-inverse ">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#title">
+					<span class="sr-only">屏幕缩小的按钮</span> <span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">问卷调查</a>
+			</div>
+			<!-- title名称不能修改 -->
+			<div id="title" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+				</ul>
+			</div>
+		</div>
+
+		<form action="diaocha/save.do" id="form" class="form-horizontal"
+			method="post">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">一、您的性别是：</label>
+				<div class="col-sm-10">
+					<label class="radio-inline">
+						<input type="radio" name="sex" value="boy" checked>
+						男
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sex" value="girl">
+						女
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">二、您的年龄是：</label>
+				<div class="col-sm-10">
+					<label class="radio-inline">
+						<input type="radio" name="age" value="16岁以下">
+						16岁以下
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="age" value="16~23">
+						16~23
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="age" value="23~30" checked>
+						23~30
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="age" value="40~50">
+						40~50
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="age" value="50以上">
+						50以上
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">三、您的学历是：</label>
+				<div class="col-sm-10">
+					<label class="radio-inline">
+						<input type="radio" name="degrees" value="高中以下" checked>
+						高中以下
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="degrees" value="高中">
+						高中
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="degrees" value="专科">
+						专科
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="degrees" value="本科" checked>
+						本科
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="degrees" value="硕士及以上">
+						硕士及以上
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">四、您的职业是：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="job" placeholder="职业">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">五、您有做过半途而废的事情么？如果有请列明:</label>
+				<div class="col-sm-8">
+					<div class="radio">
+						<label>
+							<input type="radio" name="giveup" value="no" checked>
+							没有
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="giveup" value="yes">
+							有
+						</label>
+					</div>
+					<textarea class="form-control" name="giveupcontent"
+						placeholder="半途而废经历"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">六、您半途而废的愿意是：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="giveupreson"
+						placeholder="半途而废原因">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">七、如果现在有个手机软件app督促您完成，您愿意尝试么？</label>
+				<div class="col-sm-8">
+					<div class="radio">
+						<label>
+							<input type="radio" name="useapp" value="yes" checked>
+							愿意
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="useapp" value="no">
+							不愿意
+						</label>
+						<textarea class="form-control" name="notUseAppReason"
+							placeholder="不愿意用app原因"></textarea>
+					</div>
+				</div>
+
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">八、如果愿意，您希望APP以什么方式监督您：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="supervise"
+						placeholder="监督方式">
+				</div>
+			</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">九、如果需要每天在该app打卡，您愿意尝试么？</label>
+		<div class="col-sm-10">
+			<div class="radio">
+				<label>
+					<input type="radio" name="daka" value="yes" checked>
+					愿意
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="daka" value="no">
+					不愿意
+				</label>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">十、您会介意监督您的人是陌生人吗？</label>
+		<div class="col-sm-10">
+			<div class="radio">
+				<label>
+					<input type="radio" name="stranger" value="yes" checked>
+					介意
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="stranger" value="no">
+					不介意
+				</label>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">十一、您愿意为此花费少量的金钱吗？</label>
+		<div class="col-sm-10">
+			<div class="radio">
+				<label>
+					<input type="radio" name="money" value="yes" checked>
+					愿意
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="money" value="no">
+					不愿意
+				</label>
+			</div>
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-info btn-lg btn-block">提交</button>
+	</form>
+	</div>
+</body>
+
+<!-- 浏览器下载js脚本文件时候，不会启动其他下载任务，放在底部有助于页面加载速度 -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</html>
