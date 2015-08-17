@@ -15,7 +15,7 @@ public class SurveyUser {
 	private String giveupcontent;
 	private String giveupreson;
 	private String useapp;
-	private String not_use_app_reason;
+	private String notUseAppReason;
 	private String supervise;
 	private String daka;
 	private String stranger;
